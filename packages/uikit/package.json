@@ -1,0 +1,19 @@
+{
+    "name": "uikit",
+    "version": "1.0.0",
+    "license": "MIT",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "sideEffects": false,
+    "files": [
+        "/lib"
+    ],
+    "dependencies": {
+        "goober": "2.1.14",
+        "preact": "10.19.6"
+    },
+    "scripts": {
+        "compile": "tsc --jsx",
+        "test": "echo \"Warning: no test specified\""
+    }
+}

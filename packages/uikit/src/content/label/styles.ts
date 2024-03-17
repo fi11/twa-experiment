@@ -6,11 +6,12 @@ export const text = css({
 });
 
 export const base = css({
-    display: "grid",
+    display: "inline-flex",
     boxSizing: "border-box",
     overflow: "hidden",
     height: "max-content",
     width: "max-content",
+    flexShrink: 0,
     background: backgrounds[ColorBg.secondary].var,
     padding: `${spacing[SizeSpace.x075].var} ${spacing[SizeSpace.x100].var}`,
     borderRadius: spacing[SizeSpace.x200].var,

@@ -6,7 +6,8 @@
     "types": "lib/index.d.ts",
     "sideEffects": false,
     "files": [
-        "/lib"
+        "/lib",
+        "/assets"
     ],
     "dependencies": {
         "goober": "2.1.14",
@@ -14,6 +15,7 @@
     },
     "scripts": {
         "compile": "tsc --jsx",
+        "ts": "tsc  --noEmit",
         "test": "echo \"Warning: no test specified\""
     }
 }

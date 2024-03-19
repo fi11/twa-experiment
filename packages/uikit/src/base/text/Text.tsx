@@ -1,22 +1,41 @@
 import { TextProps } from "./types.public";
-import { baseTextStyle, colors, inline, indentStart, styleView, indentEnd } from "./styles";
-import { cn } from "../../theme";
-import { SizeText } from "../../theme";
+import { baseCss, cn, ColorText, cssMemo, optCss, SizeText, strongCss, textColors, typography } from "../../theme";
+
+const styles = {
+    main: baseCss({
+        display: "flex",
+        boxSizing: "border-box",
+        ["-webkit-font-smoothing"]: "antialiased",
+        ["-moz-osx-font-smoothing"]: "auto",
+        fontSmooth: "always",
+        userSelect: "none",
+        ["-webkit-user-select"]: "none",
+        ["-webkit-touch-callout"]: "none",
+        font: typography[SizeText.body].var,
+        color: textColors[ColorText.body].var,
+    }),
+    inline: optCss({
+        display: "inline",
+        overflow: "hidden",
+        textOverflow: "ellipsis",
+        maxWidth: "100%",
+        whiteSpace: "nowrap",
+    }),
+    multiline: cssMemo((lines: number) => {
+        return strongCss({
+            display: "-webkit-box",
+            ["-webkit-line-clamp"]: lines,
+            ["-webkit-box-orient"]: "vertical",
+            overflow: "hidden",
+        });
+    }),
+};
 
 export function Text(props: TextProps) {
-    const view = props.size || SizeText.body;
     return (
         <div
             data-name={"Text"}
-            className={cn(
-                baseTextStyle,
-                props.className,
-                styleView(view),
-                props.inline && inline,
-                colors(props.color),
-                indentStart(props.indentStart),
-                indentEnd(props.indentEnd),
-            )}
+            className={cn(styles.main(), props.cn, styles.inline(!!props.inline), styles.multiline(props.multiline))}
         >
             {props.children}
         </div>

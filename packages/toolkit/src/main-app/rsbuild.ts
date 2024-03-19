@@ -20,6 +20,7 @@ const configure = ({ name }: ConfigureInput) => {
                 distPath: {
                     root: resolve(rootDir, "build", name),
                 },
+                // injectStyles: true,
                 // assetPrefix: 'https://cdn.example.com/assets/',
             },
             html: {

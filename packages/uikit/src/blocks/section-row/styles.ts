@@ -11,13 +11,13 @@ export const base = css`
     }
     &:nth-child(1) {
         padding-top: ${spacing[SizeSpace.x100].var};
-        & > *:first-child {
+        & > * > *:first-child {
             box-shadow: none;
         }
-        & > *:nth-child(2) {
+        & > * > *:nth-child(2) {
             box-shadow: none;
         }
-        & > *:last-child {
+        & > * > *:last-child {
             box-shadow: none;
         }
     }

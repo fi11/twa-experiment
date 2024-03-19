@@ -1,16 +1,17 @@
 import { main } from "cookbook";
 import * as text from "./base/text/examples";
-import * as stack from "./base/stack/examples";
-import * as area from "./base/area/examples";
-import * as layout from "./base/layout/examples";
-import * as cell from "./base/cell/examples";
+import * as vstack from "./base/h-stack/examples";
+import * as hstack from "./base/v-stack/examples";
+import * as box from "./base/box/examples";
+import * as vcell from "./base/v-cell/examples";
+import * as hcell from "./base/h-cell/examples";
 import * as contentCard from "./blocks/content-card/examples";
 import * as sectionRow from "./blocks/section-row/examples";
 import * as section from "./blocks/section/examples";
 import * as image from "./content/image/examples";
 import * as icon from "./content/icon/examples";
 import * as label from "./content/label/examples";
-import { backgrounds, cn, ColorBg, telegramTheme, theme } from "./theme";
+import { backgrounds, cn, ColorBg, telegramTheme } from "./theme";
 import { css } from "goober";
 
 const t = {
@@ -34,6 +35,6 @@ const bg = css`
 `;
 
 main(
-    { text, stack, area, layout, cell, section, sectionRow, contentCard, image, icon, label },
+    { text, vstack, hstack, box, vcell, hcell, section, sectionRow, contentCard, image, icon, label },
     { className: cn(telegramTheme, bg) },
 );

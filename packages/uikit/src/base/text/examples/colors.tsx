@@ -1,36 +1,36 @@
 import { Example } from "cookbook";
 
 import { Text } from "../index";
-import { VStack } from "../../stack";
+import { VStack } from "../../v-stack";
 
-import { SizeSpace, ColorText, SizeText } from "../../../theme";
+import { ColorText, SizeSpace, st } from "../../../theme";
 
 export const colors = () => {
     return (
         <Example>
             <VStack gap={SizeSpace.x200}>
-                <Text inline size={SizeText.body} color={ColorText.body}>
+                <Text inline cn={[st.colorText(ColorText.body)]}>
                     Awesome text main
                 </Text>
-                <Text inline size={SizeText.body} color={ColorText.accent}>
+                <Text inline cn={[st.colorText(ColorText.accent)]}>
                     Awesome text accent
                 </Text>
-                <Text inline size={SizeText.body} color={ColorText.destructive}>
+                <Text inline cn={[st.colorText(ColorText.destructive)]}>
                     Awesome text destructive
                 </Text>
-                <Text inline size={SizeText.body} color={ColorText.button}>
+                <Text inline cn={[st.colorText(ColorText.button)]}>
                     Awesome text button
                 </Text>
-                <Text inline size={SizeText.body} color={ColorText.sectionHeader}>
+                <Text inline cn={[st.colorText(ColorText.sectionHeader)]}>
                     Awesome text sectionHeader
                 </Text>
-                <Text inline size={SizeText.body} color={ColorText.subtitle}>
+                <Text inline cn={[st.colorText(ColorText.subtitle)]}>
                     Awesome text subtitle
                 </Text>
-                <Text inline size={SizeText.body} color={ColorText.link}>
+                <Text inline cn={[st.colorText(ColorText.link)]}>
                     Awesome text link
                 </Text>
-                <Text inline size={SizeText.body} color={ColorText.hint}>
+                <Text inline cn={[st.colorText(ColorText.hint)]}>
                     Awesome text hint
                 </Text>
             </VStack>

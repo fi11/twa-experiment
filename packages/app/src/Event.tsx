@@ -1,17 +1,18 @@
 import { AppLayout } from "./AppLayout";
 import {
-    Area,
-    AreaAlign,
+    Box,
     ColorBg,
     ContentCard,
     Icon,
     Label,
-    Layout,
+    VCell,
     Section,
     SectionRow,
     SizeSpace,
     SvgGroup,
     VStack,
+    st,
+    Align,
 } from "uikit";
 import { LogoSvg } from "./LogoSvg";
 import coverSrc from "./media/cover.jpeg";
@@ -39,18 +40,19 @@ export function Event() {
     }, []);
     return (
         <AppLayout>
-            <Layout
+            <VCell
                 body={
-                    <Area vScroll>
+                    <Box cn={[st.scroll("v")]}>
                         <VStack gap={SizeSpace.x200}>
-                            <Area
-                                compact
-                                hAlign={AreaAlign.center}
-                                indentBottom={SizeSpace.x400}
-                                indentTop={SizeSpace.x200}
+                            <Box
+                                cn={[
+                                    st.hAlign(Align.center),
+                                    st.vIndentStart(SizeSpace.x200),
+                                    st.vIndentEnd(SizeSpace.x400),
+                                ]}
                             >
                                 <LogoSvg />
-                            </Area>
+                            </Box>
                             <ContentCard
                                 coverSrc={coverSrc}
                                 title={"Атомные привычки"}
@@ -73,7 +75,7 @@ export function Event() {
                                 />
                             </Section>
                         </VStack>
-                    </Area>
+                    </Box>
                 }
             />
         </AppLayout>

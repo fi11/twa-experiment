@@ -1,7 +1,10 @@
-export function cn(...args: (string | false | undefined | null)[]): string {
+type CNItem = string | false | undefined | null | CNItem[];
+
+export function cn(...args: CNItem[]): string {
     return args.reduce((acc: string, curr) => {
         if (curr) {
-            acc += ` ${curr}`;
+            const value = Array.isArray(curr) ? cn(...curr) : curr;
+            acc += ` ${value}`;
         }
 
         return acc;

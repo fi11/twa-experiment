@@ -1,4 +1,4 @@
-import { useEffect, useState, Ref } from "preact/hooks";
+import { Ref, useEffect, useState } from "preact/hooks";
 import { Pressable } from "../../types";
 import { PressableViewController } from "../PressableViewController";
 

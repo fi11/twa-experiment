@@ -1,3 +1,3 @@
 export type Styleable = {
-    className?: string;
+    cn?: (string | false)[];
 };

@@ -1,27 +1,27 @@
 import { Example } from "cookbook";
 import { Label } from "../Label";
 import { Section } from "../../../blocks";
-import { Area, VStack } from "../../../base";
-import { SizeSpace } from "../../../theme";
+import { Box, VStack } from "../../../base";
+import { SizeSpace, st } from "../../../theme";
 
 export const main = () => {
     return (
         <Example>
             <VStack gap={SizeSpace.x200}>
                 <Section>
-                    <Area spacing={SizeSpace.x200}>
+                    <Box cn={[st.spacing(SizeSpace.x200)]}>
                         <Label title={"Open"} />
-                    </Area>
+                    </Box>
                 </Section>
                 <Section>
-                    <Area spacing={SizeSpace.x200}>
+                    <Box cn={[st.spacing(SizeSpace.x200)]}>
                         <Label title={"99"} />
-                    </Area>
+                    </Box>
                 </Section>
                 <Section>
-                    <Area spacing={SizeSpace.x200}>
+                    <Box cn={[st.spacing(SizeSpace.x200)]}>
                         <Label title={"0"} />
-                    </Area>
+                    </Box>
                 </Section>
             </VStack>
         </Example>

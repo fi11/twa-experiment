@@ -1,5 +1,5 @@
 import { ComponentChild } from "preact";
-import { css, cn, Area, ColorBg, SizeSpace, telegramTheme } from "uikit";
+import { Box, cn, ColorBg, css, SizeSpace, st, telegramTheme } from "uikit";
 
 const style = css({
     width: "100%",
@@ -7,8 +7,6 @@ const style = css({
 });
 export function AppLayout({ children }: { children: ComponentChild }) {
     return (
-        <Area spacing={SizeSpace.x200} className={cn(style, telegramTheme)} color={ColorBg.secondary}>
-            {children}
-        </Area>
+        <Box cn={[st.spacing(SizeSpace.x200), st.colorBg(ColorBg.secondary), cn(style, telegramTheme)]}>{children}</Box>
     );
 }

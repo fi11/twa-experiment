@@ -3,7 +3,6 @@ import { textColors } from "./textColors";
 import { spacing } from "./spacing";
 import { typography } from "./typography";
 import { backgrounds } from "./backgrounds";
-import { dt } from "./utils";
 import { ColorsSys, systemColors } from "./systemColors";
 
 const defaultDark = {

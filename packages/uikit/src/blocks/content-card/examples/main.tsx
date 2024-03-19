@@ -1,21 +1,22 @@
 import { Example } from "cookbook";
-import { Area, AreaAlign, Layout, Text, VStack } from "../../../base";
-import { ColorBg, SizeSpace } from "../../../theme";
+import { Box, Text, VCell, VStack } from "../../../base";
+import { ColorBg, SizeSpace, st } from "../../../theme";
 import { ContentCard } from "../ContentCard";
 import coverSrc from "../../../content/image/examples/cover.jpeg";
+import { Align } from "../../../types";
 
 export const main = () => {
     return (
         <Example>
-            <Area color={ColorBg.secondary}>
-                <Layout
-                    header={
-                        <Area color={ColorBg.header} hAlign={AreaAlign.center}>
+            <Box cn={[st.colorBg(ColorBg.secondary)]}>
+                <VCell
+                    start={
+                        <Box cn={[st.hAlign(Align.center), st.colorBg(ColorBg.header)]}>
                             <Text inline>Awesome App Title</Text>
-                        </Area>
+                        </Box>
                     }
                     body={
-                        <Area spacing={SizeSpace.x150} vScroll>
+                        <Box cn={[st.scroll("v"), st.spacing(SizeSpace.x150)]}>
                             <VStack gap={SizeSpace.x200}>
                                 <ContentCard
                                     coverSrc={coverSrc}
@@ -34,17 +35,17 @@ export const main = () => {
                                 <ContentCard coverSrc={coverSrc} overlay label={"Тест"} title={"Атомные привычки"} />
                                 <ContentCard coverSrc={coverSrc} overlay label={"Тест"} />
                             </VStack>
-                        </Area>
+                        </Box>
                     }
-                    footer={
-                        <Area spacing={SizeSpace.x150} color={ColorBg.main}>
-                            <Area spacing={SizeSpace.x150} color={ColorBg.button} hAlign={AreaAlign.center}>
+                    end={
+                        <Box cn={[st.spacing(SizeSpace.x150), st.colorBg(ColorBg.main)]}>
+                            <Box cn={[st.spacing(SizeSpace.x150), st.hAlign(Align.center), st.colorBg(ColorBg.button)]}>
                                 <Text>Записаться</Text>
-                            </Area>
-                        </Area>
+                            </Box>
+                        </Box>
                     }
                 />
-            </Area>
+            </Box>
         </Example>
     );
 };

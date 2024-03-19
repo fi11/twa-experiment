@@ -1,14 +1,11 @@
 import { SectionProps } from "./types.public";
-import { Area } from "../../base";
-import { cn, ColorBg, SizeSpace } from "../../theme";
-import { base, outline } from "./styles";
+import { Box } from "../../base";
+import { ColorBg, SizeSpace, st } from "../../theme";
 
 export function Section(props: SectionProps) {
-    const color = props.outline ? undefined : undefined; //ColorBg.section;
-
     return (
-        <Area compact radius={SizeSpace.x200} color={color} className={cn(base, props.outline && outline)}>
+        <Box cn={[st.radius(SizeSpace.x200), st.outline(ColorBg.sectionSeparator, !!props.outline)]}>
             {props.children}
-        </Area>
+        </Box>
     );
 }

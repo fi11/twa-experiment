@@ -1,12 +1,8 @@
 import { ComponentChildren } from "preact";
-import { SizeSpace, ColorText, SizeText } from "../../theme";
+import { Styleable } from "../../types";
 
-export type TextProps = {
-    className?: string;
+export type TextProps = Styleable & {
     children: ComponentChildren;
-    size?: SizeText;
-    color?: ColorText;
     inline?: boolean;
-    indentStart?: SizeSpace;
-    indentEnd?: SizeSpace;
+    multiline?: number;
 };

@@ -1,5 +1,4 @@
 import { css } from "goober";
-import { SizeSpace, spacing } from "../../theme";
 
 export const base = css({
     display: "grid",

@@ -1,11 +1,9 @@
 import { Example } from "cookbook";
 import { SectionRow } from "../SectionRow";
-import { Icon, SvgDisclosure, SvgGroup, SvgPerson } from "../../../content/icon";
+import { Icon, IconView, Label, SvgDisclosure, SvgGroup, SvgPerson } from "../../../content";
 import { Section } from "../../section";
 import { ColorBg, ColorText, SizeSpace } from "../../../theme";
 import { VStack } from "../../../base";
-import { Label } from "../../../content";
-import { IconView } from "../../../content/icon/types.public";
 
 export const main = () => {
     return (

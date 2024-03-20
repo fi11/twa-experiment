@@ -3,5 +3,5 @@
     // list, TS won't automatically include all sources below root (the default).
     "files": [],
     // Building this project will webpack all of the following:
-    "references": [{ "path": "packages/cookbook"},{ "path": "packages/uikit" }, { "path": "packages/app" }, { "path": "packages/toolkit"}]
+    "references": [{ "path": "packages/theme" },{ "path": "packages/cookbook"},{ "path": "packages/uikit" }, { "path": "packages/app" }, { "path": "packages/toolkit"}]
 }

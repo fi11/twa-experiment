@@ -1,9 +1,9 @@
 import { Example } from "cookbook";
 import { SectionRow } from "../SectionRow";
-import { Icon, IconView, Label, SvgDisclosure, SvgGroup, SvgPerson } from "../../../content";
+import { Icon, Label, SvgDisclosure, SvgGroup, SvgPerson } from "../../../content";
 import { Section } from "../../section";
-import { ColorBg, ColorText, SizeSpace } from "../../../theme";
-import { VStack } from "../../../base";
+import { ColorsSys, ColorText, iconStyles, SizeSpace, textStyles } from "theme";
+import { VStack } from "../../../layout";
 
 export const main = () => {
     return (
@@ -14,7 +14,7 @@ export const main = () => {
                         onPress={() => {}}
                         title={"Section row #1"}
                         start={
-                            <Icon view={IconView.squad}>
+                            <Icon cn={[iconStyles.square(ColorsSys.blue)]}>
                                 <SvgPerson />
                             </Icon>
                         }
@@ -40,7 +40,7 @@ export const main = () => {
                             </Icon>
                         }
                         end={
-                            <Icon color={ColorText.hint}>
+                            <Icon cn={[textStyles.color(ColorText.hint)]}>
                                 <SvgDisclosure />
                             </Icon>
                         }
@@ -53,7 +53,7 @@ export const main = () => {
                         onPress={() => {}}
                         title={"Section row #6"}
                         end={
-                            <Icon color={ColorText.link}>
+                            <Icon cn={[textStyles.color(ColorText.link)]}>
                                 <SvgDisclosure />
                             </Icon>
                         }
@@ -62,7 +62,7 @@ export const main = () => {
                         onPress={() => {}}
                         title={"Section row #6"}
                         end={
-                            <Icon color={ColorText.link}>
+                            <Icon cn={[textStyles.color(ColorText.link)]}>
                                 <SvgDisclosure />
                             </Icon>
                         }
@@ -71,7 +71,7 @@ export const main = () => {
                         onPress={() => {}}
                         title={"Section row #6"}
                         end={
-                            <Icon color={ColorText.link}>
+                            <Icon cn={[textStyles.color(ColorText.link)]}>
                                 <SvgDisclosure />
                             </Icon>
                         }
@@ -86,15 +86,15 @@ export const main = () => {
                         }
                         onPress={() => {}}
                         title={"Section row #6"}
-                        color={ColorBg.secondary}
+                        transparent
                         end={
-                            <Icon color={ColorText.link}>
+                            <Icon cn={[textStyles.color(ColorText.link)]}>
                                 <SvgDisclosure />
                             </Icon>
                         }
                     />
                     <SectionRow
-                        color={ColorBg.secondary}
+                        transparent
                         start={
                             <Icon>
                                 <SvgPerson />
@@ -103,13 +103,13 @@ export const main = () => {
                         onPress={() => {}}
                         title={"Section row #6"}
                         end={
-                            <Icon color={ColorText.link}>
+                            <Icon cn={[textStyles.color(ColorText.link)]}>
                                 <SvgDisclosure />
                             </Icon>
                         }
                     />
                     <SectionRow
-                        color={ColorBg.secondary}
+                        transparent
                         start={
                             <Icon>
                                 <SvgPerson />
@@ -118,7 +118,7 @@ export const main = () => {
                         onPress={() => {}}
                         title={"Section row #6"}
                         end={
-                            <Icon color={ColorText.link}>
+                            <Icon cn={[textStyles.color(ColorText.link)]}>
                                 <SvgDisclosure />
                             </Icon>
                         }
@@ -126,6 +126,7 @@ export const main = () => {
                 </Section>
                 <Section outline>
                     <SectionRow
+                        transparent
                         start={
                             <Icon>
                                 <SvgGroup />
@@ -133,7 +134,6 @@ export const main = () => {
                         }
                         onPress={() => {}}
                         title={"Записались"}
-                        color={ColorBg.secondary}
                         end={<Label title={"6"} />}
                     />
                 </Section>

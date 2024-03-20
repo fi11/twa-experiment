@@ -1,10 +1,36 @@
 import { useRef } from "preact/hooks";
 import { SectionRowProps } from "./types.public";
-import { Box, HCell, Text, VStack } from "../../base";
-import { ColorBg, ColorText, SizeSpace, SizeText, st } from "../../theme";
-import { base, color, pressed, separator } from "./styles";
+import { Box, HCell, VStack } from "../../layout";
+import { Text } from "../../content";
+import { backgrounds, ColorBg, ColorText, optCss, SizeSpace, SizeText, st, textStyles } from "theme";
 import { usePress } from "../../utils/hooks/usePress";
-import { Align } from "../../types";
+import { Align } from "theme";
+
+const styles = {
+    main: optCss({
+        ["&:last-child"]: {},
+        ["&:nth-child(1)"]: {
+            ["& > * > *:first-child"]: {
+                boxShadow: "none",
+            },
+            ["& > * > *:nth-child(2)"]: {
+                boxShadow: "none",
+            },
+            ["& > * > *:last-child"]: {
+                boxShadow: "none",
+            },
+        },
+    }),
+    pressed: optCss({
+        opacity: 0.5,
+    }),
+    hasBg: optCss({
+        background: `${backgrounds[ColorBg.section].var}`,
+    }),
+    separator: optCss({
+        boxShadow: `inset 0px 1px 0px 0px ${backgrounds[ColorBg.sectionSeparator].var}`,
+    }),
+};
 
 export function SectionRow(props: SectionRowProps) {
     const ref = useRef<HTMLDivElement>(null);
@@ -16,32 +42,38 @@ export function SectionRow(props: SectionRowProps) {
     });
 
     return (
-        <Box ref={ref} cn={[base, color(props.color || ColorBg.section), press.pressed && pressed]}>
+        <Box ref={ref} cn={[styles.main(true), styles.hasBg(!props.transparent), styles.pressed(press.pressed)]}>
             <HCell
                 start={
                     props.start && (
                         <Box cn={[st.vAlign(Align.center), st.hIndentStart(SizeSpace.x250)]}>{props.start}</Box>
                     )
                 }
-                end={<Box cn={[st.vAlign(Align.center), st.hIndentEnd(SizeSpace.x250), separator]}>{props.end}</Box>}
+                end={
+                    <Box cn={[st.vAlign(Align.center), st.hIndentEnd(SizeSpace.x250), styles.separator(true)]}>
+                        {props.end}
+                    </Box>
+                }
                 body={
                     <Box
                         cn={[
                             st.vAlign(Align.center),
                             st.hIndentStart(SizeSpace.x250),
                             st.vSpacing(SizeSpace.x200),
-                            separator,
+                            styles.separator(true),
                         ]}
                     >
                         <VStack>
-                            <Text inline cn={[st.text(SizeText.body)]}>
-                                {props.title}
-                            </Text>
+                            {!!props.title && (
+                                <Text inline cn={[textStyles.font(SizeText.body)]}>
+                                    {props.title}
+                                </Text>
+                            )}
                             {props.description && (
                                 <Text
                                     cn={[
-                                        st.text(SizeText.footnote),
-                                        st.colorText(ColorText.hint),
+                                        textStyles.font(SizeText.footnote),
+                                        textStyles.color(ColorText.hint),
                                         st.vIndentStart(SizeSpace.x025),
                                     ]}
                                 >

@@ -1,15 +1,6 @@
 import { ComponentChild } from "preact";
-import { ColorText, SizeSpace } from "../../theme";
-import { ColorsSys } from "../../theme/systemColors";
+import { Styleable } from "../../types";
 
-export enum IconView {
-    squad = "squad",
-    // circle = "circle",
-}
-export type IconProps = {
+export type IconProps = Styleable & {
     children: ComponentChild;
-    size?: SizeSpace;
-    color?: ColorText;
-    bgColor?: ColorsSys;
-    view?: IconView;
 };

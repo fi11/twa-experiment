@@ -1,7 +1,7 @@
 import { css } from "goober";
-import { backgrounds, ColorBg, cssMemo, SizeSpace, spacing } from "../../theme";
+import { backgrounds, ColorBg, cssMemo, SizeSpace, spacing } from "theme";
 
-// export const base = css({});
+// export const layout = css({});
 
 export const base = css`
     touch-action: none;

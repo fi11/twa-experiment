@@ -1,4 +1,5 @@
-import { Box, SizeSpace, SizeText, Text, st } from "uikit";
+import { Box, SizeSpace, SizeText, Text } from "uikit";
+import { textStyles, st } from "theme";
 // element.style.getPropertyValue("--my-var");
 //
 // getComputedStyle(element).getPropertyValue("--my-var");
@@ -12,7 +13,7 @@ export const ThemeValue = () => {
     } catch {}
     return (
         <Box cn={[st.vIndentStart(SizeSpace.x300)]}>
-            <Text cn={[st.text(SizeText.footnote)]}>
+            <Text cn={[textStyles.font(SizeText.footnote)]}>
                 <pre style={{}}>{value}</pre>
             </Text>
         </Box>

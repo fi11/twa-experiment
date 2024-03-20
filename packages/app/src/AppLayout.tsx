@@ -1,5 +1,6 @@
 import { ComponentChild } from "preact";
-import { Box, cn, ColorBg, css, SizeSpace, st, telegramTheme } from "uikit";
+import { Box } from "uikit";
+import { cn, ColorBg, css, SizeSpace, st, telegramTheme } from "theme";
 
 const style = css({
     width: "100%",
@@ -7,6 +8,17 @@ const style = css({
 });
 export function AppLayout({ children }: { children: ComponentChild }) {
     return (
-        <Box cn={[st.spacing(SizeSpace.x200), st.colorBg(ColorBg.secondary), cn(style, telegramTheme)]}>{children}</Box>
+        <Box cn={[st.colorBg(ColorBg.secondary), cn(style(), telegramTheme)]}>
+            <Box
+                cn={[
+                    st.vSpacing(SizeSpace.x200),
+                    st.colorBg(ColorBg.secondary),
+                    st.scroll("v"),
+                    cn(style(), telegramTheme),
+                ]}
+            >
+                {children}
+            </Box>
+        </Box>
     );
 }

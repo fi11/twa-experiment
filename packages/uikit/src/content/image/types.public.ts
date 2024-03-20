@@ -1,4 +1,4 @@
-import { ColorBg } from "../../theme";
+import { ColorBg } from "theme";
 
 export type ImageProps = {
     src: string;

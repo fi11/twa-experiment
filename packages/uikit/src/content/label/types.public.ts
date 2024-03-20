@@ -1,7 +1,5 @@
-import { ColorBg } from "../../theme";
+import { Styleable } from "../../types";
 
-export type LabelProps = {
-    className?: string;
+export type LabelProps = Styleable & {
     title: string;
-    color?: ColorBg;
 };

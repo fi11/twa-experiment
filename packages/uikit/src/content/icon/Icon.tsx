@@ -1,21 +1,29 @@
-import { IconProps, IconView } from "./types.public";
-import { cn, ColorText, SizeSpace } from "../../theme";
-import { base, color, size, squad } from "./styles";
-import { ColorsSys } from "../../theme/systemColors";
+import { IconProps } from "./types.public";
+import { baseCss, cn, ColorText, SizeSpace, spacing, textColors } from "theme";
+
+const styles = {
+    main: baseCss({
+        display: "inline-flex",
+        boxSizing: "border-box",
+        overflow: "hidden",
+        justifyContent: "center",
+        alignItems: "center",
+        flexShrink: 0,
+        width: spacing[SizeSpace.x250].var,
+        height: spacing[SizeSpace.x250].var,
+        color: textColors[ColorText.body].var,
+        ["svg"]: {
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            color: "currentColor",
+        },
+    }),
+};
 
 export function Icon(props: IconProps) {
-    const isSquad = props.view === IconView.squad;
-
     return (
-        <div
-            data-name="Icon"
-            className={cn(
-                base,
-                size(props.size || SizeSpace.x250),
-                !isSquad && color(props.color || ColorText.body),
-                isSquad && squad(props.bgColor || ColorsSys.blue),
-            )}
-        >
+        <div data-name="Icon" className={cn(styles.main(), props.cn)}>
             {props.children}
         </div>
     );

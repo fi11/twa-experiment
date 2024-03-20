@@ -1,7 +1,7 @@
 import { Example } from "cookbook";
 import { Section } from "../Section";
-import { VStack } from "../../../base";
-import { SizeSpace } from "../../../theme";
+import { VStack } from "../../../layout";
+import { SizeSpace } from "theme";
 
 export const main = () => {
     return (

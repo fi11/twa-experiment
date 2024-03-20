@@ -1,8 +1,8 @@
 import { Example } from "cookbook";
 import { Image } from "../Image";
 import src from "./cover.jpeg";
-import { Box, VStack } from "../../../base";
-import { ColorBg, SizeSpace, st } from "../../../theme";
+import { Box, VStack } from "../../../layout";
+import { ColorBg, SizeSpace, st } from "theme";
 
 export const main = () => {
     return (

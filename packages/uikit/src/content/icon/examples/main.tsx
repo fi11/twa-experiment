@@ -1,12 +1,11 @@
 import { Example } from "cookbook";
 import { Icon } from "../Icon";
-import { VStack } from "../../../base";
-import { ColorText, SizeSpace } from "../../../theme";
+import { VStack } from "../../../layout";
+import { ColorText, iconStyles, SizeSpace, textStyles } from "theme";
 import { SvgEventBusy, SvgGroup, SvgLock, SvgPerson } from "../icon-set";
 import { SvgApps } from "../icon-set/apps";
 import { SvgTime } from "../icon-set/time";
-import { IconView } from "../types.public";
-import { ColorsSys } from "../../../theme/systemColors";
+import { ColorsSys } from "theme";
 
 export const main = () => {
     return (
@@ -15,34 +14,34 @@ export const main = () => {
                 <Icon>
                     <SvgLock />
                 </Icon>
-                <Icon view={IconView.squad}>
+                <Icon cn={[iconStyles.square(ColorsSys.blue)]}>
                     <SvgPerson />
                 </Icon>
-                <Icon size={SizeSpace.x300} color={ColorText.accent}>
+                <Icon cn={[textStyles.color(ColorText.accent), iconStyles.size(SizeSpace.x300)]}>
                     <SvgGroup />
                 </Icon>
-                <Icon size={SizeSpace.x400} color={ColorText.destructive}>
+                <Icon cn={[textStyles.color(ColorText.destructive), iconStyles.size(SizeSpace.x400)]}>
                     <SvgPerson />
                 </Icon>
-                <Icon size={SizeSpace.x500} color={ColorText.link}>
+                <Icon cn={[textStyles.color(ColorText.link), iconStyles.size(SizeSpace.x500)]}>
                     <SvgApps />
                 </Icon>
-                <Icon size={SizeSpace.x600} color={ColorText.hint}>
+                <Icon cn={[textStyles.color(ColorText.hint), iconStyles.size(SizeSpace.x600)]}>
                     <SvgEventBusy />
                 </Icon>
-                <Icon size={SizeSpace.x700}>
+                <Icon cn={[iconStyles.size(SizeSpace.x700)]}>
                     <SvgTime />
                 </Icon>
-                <Icon size={SizeSpace.x800}>
+                <Icon cn={[iconStyles.size(SizeSpace.x800)]}>
                     <SvgPerson />
                 </Icon>
-                <Icon view={IconView.squad} size={SizeSpace.x800}>
+                <Icon cn={[iconStyles.square(ColorsSys.blue), iconStyles.size(SizeSpace.x800)]}>
                     <SvgApps />
                 </Icon>
-                <Icon view={IconView.squad} bgColor={ColorsSys.orange}>
+                <Icon cn={[iconStyles.square(ColorsSys.orange)]}>
                     <SvgPerson />
                 </Icon>
-                <Icon view={IconView.squad} bgColor={ColorsSys.purple}>
+                <Icon cn={[iconStyles.square(ColorsSys.purple)]}>
                     <SvgPerson />
                 </Icon>
             </VStack>

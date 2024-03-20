@@ -2,9 +2,8 @@ import { useRef } from "preact/hooks";
 import { SectionRowProps } from "./types.public";
 import { Box, HCell, VStack } from "../../layout";
 import { Text } from "../../content";
-import { backgrounds, ColorBg, ColorText, optCss, SizeSpace, SizeText, st, textStyles } from "theme";
+import { Align, backgrounds, ColorBg, ColorText, optCss, SizeSpace, SizeText, st, textStyles } from "theme";
 import { usePress } from "../../utils/hooks/usePress";
-import { Align } from "theme";
 
 const styles = {
     main: optCss({

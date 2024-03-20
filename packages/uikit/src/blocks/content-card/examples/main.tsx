@@ -1,10 +1,9 @@
 import { Example } from "cookbook";
 import { Box, VCell, VStack } from "../../../layout";
 import { Text } from "../../../content";
-import { ColorBg, SizeSpace, st } from "theme";
+import { Align, ColorBg, SizeSpace, st } from "theme";
 import { ContentCard } from "../ContentCard";
 import coverSrc from "../../../content/image/examples/cover.jpeg";
-import { Align } from "theme";
 
 export const main = () => {
     return (

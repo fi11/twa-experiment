@@ -1,12 +1,11 @@
 import { Example } from "cookbook";
 import { VCell } from "../VCell";
 import { Box } from "../../box";
-import { ColorBg, SizeSpace, st } from "theme";
+import { Align, ColorBg, SizeSpace, st } from "theme";
 import { HCell } from "../../h-cell";
 import { Text } from "../../../content/text";
 import { HStack } from "../../h-stack";
 import { VStack } from "../../v-stack";
-import { Align } from "theme";
 
 const CellItem = ({ value }: { value: string }) => (
     <Box cn={[st.colorBg(ColorBg.secondary)]}>

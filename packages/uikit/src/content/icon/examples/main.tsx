@@ -1,11 +1,10 @@
 import { Example } from "cookbook";
 import { Icon } from "../Icon";
 import { VStack } from "../../../layout";
-import { ColorText, iconStyles, SizeSpace, textStyles } from "theme";
+import { ColorsSys, ColorText, iconStyles, SizeSpace, textStyles } from "theme";
 import { SvgEventBusy, SvgGroup, SvgLock, SvgPerson } from "../icon-set";
 import { SvgApps } from "../icon-set/apps";
 import { SvgTime } from "../icon-set/time";
-import { ColorsSys } from "theme";
 
 export const main = () => {
     return (

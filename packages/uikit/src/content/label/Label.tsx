@@ -1,7 +1,6 @@
 import { LabelProps } from "./types.public";
 import { Text } from "../text";
-import { backgrounds, baseCss, cn, ColorBg, optCss, SizeSpace, SizeText, spacing, st, textStyles } from "theme";
-import { Align } from "theme";
+import { Align, backgrounds, baseCss, cn, ColorBg, optCss, SizeSpace, SizeText, spacing, st, textStyles } from "theme";
 
 const styles = {
     main: optCss({

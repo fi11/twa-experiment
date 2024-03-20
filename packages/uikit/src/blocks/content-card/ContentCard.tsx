@@ -1,8 +1,7 @@
 import { ContentCardProps } from "./types.public";
 import { Box } from "../../layout";
 import { Image, Label, Text } from "../../content";
-import { ColorBg, ColorText, externalCss, SizeSpace, SizeText, st, textStyles } from "theme";
-import { Align } from "theme";
+import { Align, ColorBg, ColorText, externalCss, SizeSpace, SizeText, st, textStyles } from "theme";
 
 const styles = {
     overlayBox: externalCss({

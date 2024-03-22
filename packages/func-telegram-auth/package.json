@@ -1,0 +1,21 @@
+{
+    "name": "func-telegram-auth",
+    "version": "1.0.0",
+    "description": "",
+    "main": "lib/index.js",
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "scripts": {
+        "dev": "tsc && node ./lib/local-server/main.js",
+        "compile": "tsc"
+    },
+    "dependencies": {
+        "jsonwebtoken": "9.0.2",
+        "zod": "3.22.4"
+    },
+    "devDependencies": {
+        "@types/jsonwebtoken": "9.0.6",
+        "@yandex-cloud/function-types": "2.1.1"
+    }
+}

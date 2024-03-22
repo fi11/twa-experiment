@@ -29,7 +29,7 @@ export const server = http.createServer((req, res) => {
                 });
         })
             .then(data => {
-                return handler({ body: JSON.parse(data) } as any, {} as any);
+                return handler({ body: data, headers: req.headers } as any, {} as any);
             })
             .then(result => {
                 res.writeHead(result.statusCode);

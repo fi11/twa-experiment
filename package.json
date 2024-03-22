@@ -12,7 +12,10 @@
         "build": "toolkit build app",
         "dev": "toolkit dev app",
         "ex": "toolkit cookbook uikit",
-        "serve": "aws s3 --endpoint-url=https://storage.yandexcloud.net cp --recursive build/app/ s3://tapp-test/"
+        "serve": "aws s3 --endpoint-url=https://storage.yandexcloud.net cp --recursive build/app/ s3://tapp-test/",
+        "func:dev": "npm run compile && dev-func",
+        "func:build": "toolkit build-func func-telegram-auth",
+        "func:upload": "toolkit upload-func func-telegram-auth"
     },
     "devDependencies": {
         "prettier": "3.2.5",

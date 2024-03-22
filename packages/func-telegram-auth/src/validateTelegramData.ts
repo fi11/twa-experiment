@@ -58,7 +58,7 @@ export const verifyTelegramWebAppData = (
                     if (date.valueOf() + expiresIn * 1000 < new Date().valueOf()) {
                         return false;
                     }
-                    data[key] = new Date(authDate).toISOString();
+                    data[key] = date.toISOString();
                     return true;
                 case "chat_instance":
                 case "chat_type":

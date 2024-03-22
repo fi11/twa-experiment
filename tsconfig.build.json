@@ -9,6 +9,8 @@
         { "path": "packages/uikit" },
         { "path": "packages/app" },
         { "path": "packages/toolkit"},
-        { "path":  "packages/backend" }
+        { "path": "packages/func-telegram-auth"},
+        { "path": "packages/func-events"},
+        { "path": "packages/func-local-server"},
     ]
 }

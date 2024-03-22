@@ -1,0 +1,21 @@
+openapi: 3.0.0
+info:
+  title: Sample API
+  version: 1.0.0
+
+servers:
+  - url: https://d5d6i4dcisfrr6ceqmue.apigw.yandexcloud.net
+x-yc-apigateway:
+  cors:
+    origin: https://tapp-test.website.yandexcloud.net
+    methods: 'POST'
+    allowedHeaders: '*'
+
+paths:
+  /auth:
+    post:
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        service_account_id: aje78hv4hko58dk8bk1m
+        tag: "$latest"
+        function_id: d4een8as1m31sq89bu7v

@@ -1,18 +1,18 @@
 import { z } from "zod";
 import jwt from "jsonwebtoken";
-import { createHandler } from "../utils";
-import { verifyTelegramWebAppData } from "../utils";
+import { createHandler } from "./handler";
+import { verifyTelegramWebAppData } from "./validateTelegramData";
 
-const TELEGRAM_BOT_TOKEN = ""; // https://core.telegram.org/bots#creating-a-new-bot
-const JWT_SECRET = "secret";
-const DEFAULT_EXPIRES_IN = 1800;
+const TG_BOT_SECRET = process.env.TG_BOT_SECRET || "";
+const JWT_SECRET = process.env.JWT_SECRET || "secret";
+const EXPIRES_IN_SEC = Number.parseInt(process.env.TG_EXPIRES_IN || "", 10) || 3600;
 
 const schema = z.object({
     initData: z.string(),
 });
 
 export const handler = createHandler(schema, async data => {
-    const initData = verifyTelegramWebAppData(data.initData, TELEGRAM_BOT_TOKEN, DEFAULT_EXPIRES_IN);
+    const initData = verifyTelegramWebAppData(data.initData, TG_BOT_SECRET, EXPIRES_IN_SEC);
     if (!initData) {
         return {
             statusCode: 401,
@@ -35,8 +35,8 @@ export const handler = createHandler(schema, async data => {
     return {
         statusCode: 200,
         body: {
-            initData,
-            token,
+            data: initData,
+            accessToken: token,
         },
     };
 });
